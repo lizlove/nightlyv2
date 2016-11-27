@@ -5,10 +5,19 @@
   "main": "app-api.js",
   "repository": "lizlove/nightlyv2",
   "license": "MIT",
+  "scripts": {
+    "prebuild-css": "node-sass --include-path scss ./src/sass/nightly-review.scss ./public/nightly-review.css",
+    "min-css": "postcss --use autoprefixer -b 'last 2 versions' < ./public/nightly-review.css | postcss --use cssnano > ./public/nightly-review.min.css",
+    "build-css": "npm run prebuild-css && npm run min-css",
+    "watch-css": "watch 'npm run build-css' src/*"
+  },
   "dependencies": {
+    "autoprefixer": "^6.5.3",
     "body-parser": "~1.0.1",
     "compression": "^1.6.2",
-    "express": "^4.0.0"
+    "express": "^4.0.0",
+    "node-sass": "^3.13.0",
+    "postcss": "^5.2.6"
   },
   "devDependencies": {
     "babel-loader": "^6.2.8",
