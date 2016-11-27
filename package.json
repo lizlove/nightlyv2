@@ -1,0 +1,13 @@
+{
+  "name": "nightly-v2",
+  "version": "1.0.0",
+  "description": "Write, save, and share daily inventories",
+  "main": "app-api.js",
+  "repository": "lizlove/nightlyv2",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "2.4.0",
+    "body-parser": "1.15.0",
+    "express": "^4.14.0"
+  }
+}
